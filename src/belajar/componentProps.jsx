@@ -14,7 +14,7 @@ function Button() {
 const Button2 = (props) => {
   // dibawah ini adalah cara ngasih nilai default kedalam props (dalam contoh ini si 'text')
   const {text="..."} = props;
-  //dibawag ini adalah cara menggunakan props
+  //dibawah ini adalah cara menggunakan props
   return <button className={`h-10 px-6 font-semibold rounded-md ${props.color} text-white`}>{text}</button>
 }
 
@@ -25,11 +25,12 @@ const Button3 = (props) => {
   return <button className={`h-15 px-6 font-semibold rounded-md ${color} text-white`}>{children}</button>
 }
 
-export default function ComponentProps() {
+export default function ComponentProps(props) {
+  const {textColor, text} = props
   return (
     <>
       <div className="flex justify-center items-center mb-8">
-        <h1 className="text-5xl font-bold text-center">Hello World</h1>
+        <h1 className={`${textColor} text-5xl font-bold text-center` }>{text}</h1>
       </div>
       <div className="flex justify-center items-center gap-x-4">
         <button className="h-10 px-6 font-semibold rounded-md bg-black text-white">Button</button>
