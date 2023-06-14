@@ -8,21 +8,28 @@ import "./index.css";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import ErrorPage from "./pages/error";
+import ProductPage from "./pages/product";
+import ProductDetail from "./pages/catalog";
 
 
 const router = createBrowserRouter([
+
   {
-    path: "/",
-    element: <div>Hello world!</div>,
-    errorElement: <ErrorPage/>
-  },
-  {
-    path:"/login",
+    path:"/",
     element:<LoginPage/>,
+    errorElement:<ErrorPage/>
   },
   {
     path:"/register",
     element:<RegisterPage/>
+  },
+  {
+    path:"/login",
+    element:<ProductPage/>
+  },
+  {
+    path:"/catalog",
+    element:<ProductDetail/>
   },
 ]);
 
