@@ -5,6 +5,7 @@ import InputForm from './components/molecules/InputForm';
 import Login from './components/organism/Login';
 import AuthLayout from './components/template/AuthLayout';
 import Register from './components/organism/Register';
+import Counter from './belajar/counter';
 
 function App() {
   return (
@@ -14,12 +15,13 @@ function App() {
         {/* cara menambahkan style yang tidak ada di tailwind menggunkan arbitari atau 
         kurung siku seperti contoh textcolor dibawah ini */}
         {/* <ComponentProps textColor="text-cyan-500" text="Selamat Datang"/> */}
-        <AuthLayout title="Login" desc="Silahkan Masuk">
+        {/* <AuthLayout title="Login" desc="Silahkan Masuk">
           <Login />
         </AuthLayout>
         <AuthLayout title="Register" desc="Silahkan Masuk">
           <Register />
-        </AuthLayout>
+        </AuthLayout> */}
+        <Counter></Counter>
       </div>
     </>
   );

@@ -10,13 +10,15 @@ import RegisterPage from "./pages/register";
 import ErrorPage from "./pages/error";
 import ProductPage from "./pages/product";
 import ProductDetail from "./pages/catalog";
+import Counter from "./belajar/counter";
 
 
 const router = createBrowserRouter([
 
   {
     path:"/",
-    element:<LoginPage/>,
+    // element:<LoginPage/>,
+    element: <Counter/>,
     errorElement:<ErrorPage/>
   },
   {

@@ -7,7 +7,7 @@ export default function CardProduct(props) {
     return (
         <>
             <div className="rounded-lg bg-gradient-to-r from-violet-500 via-blue-500 to-sky-500 p-1">
-                <div className="w-full max-w-lg bg-white rounded-lg">{children}</div>
+                <div className="w-80 h-[450px] bg-white rounded-lg">{children}</div>
             </div>
         </>
     )
@@ -37,17 +37,19 @@ const Body = (props) => {
 };
 
 const Footer = (props) => {
-    const { price } = props;
+    const { price, handleToCart, id } = props;
     return (
         <>
             <div className="px-6 py-4">
                 <div className="flex justify-between items-center py-2 px-2">
-                    <span className="text-2xl font-bold text-slate-900" >Harga </span>
-                    <h1 className="text-xs font-bold text-slate-900">{price}</h1>
+                    <span className="text-2xl font-bold text-slate-900" >
+                        Harga : {price.toLocaleString("id-ID", {style: "currency", currency: "IDR"})}
+                    </span>
+                    {/* <h1 className="text-xs font-bold text-slate-900">{price}</h1> */}
                 </div>
-                <Link className="font-bold text-blue-500" to="/Catalog">
-                    <Button color="bg-blue-500">Beli</Button>
-                </Link>
+                <div className="font-bold text-blue-500">
+                    <Button color="bg-blue-500" onClick={() => handleToCart(id)}>Beli</Button>
+                </div>
             </div>
         </>
     );
