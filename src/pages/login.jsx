@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AuthLayout from '../components/template/AuthLayout'
 import Login from '../components/organism/Login'
 import { Link } from 'react-router-dom'
+
 
 export default function LoginPage() {
     return (

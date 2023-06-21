@@ -1,13 +1,19 @@
 import React from 'react'
 import Label from '../../atom/Label'
 import Input from '../../atom/Input'
+import {forwardRef} from "react";
 
-export default function InputForm(props) {
-    const {label, htmlFor, name, type, placeholder } = props;
+const InputForm = forwardRef ((props, ref) => {
+  const {label, name, type, placeholder } = props;
   return (
-    <div className='mb-2'>
-        <Label htmlFor={htmlFor}>{label}</Label>
-        <Input name={name} type={type} placeholder={placeholder} />
+    <>
+        <div className='mb-2'>
+        <Label htmlFor={name}>{label}</Label>
+        <Input name={name} type={type} placeholder={placeholder} ref={ref} />
     </div>
-  )
-}
+    </>
+  );
+});
+
+
+export default InputForm;

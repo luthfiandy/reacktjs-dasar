@@ -17,8 +17,8 @@ const router = createBrowserRouter([
 
   {
     path:"/",
-    // element:<LoginPage/>,
-    element: <Counter/>,
+    element:<LoginPage/>,
+    // element: <Counter/>,
     errorElement:<ErrorPage/>
   },
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element:<RegisterPage/>
   },
   {
-    path:"/login",
+    path:"/product",
     element:<ProductPage/>
   },
   {

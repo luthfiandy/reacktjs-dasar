@@ -60,8 +60,8 @@ export default function ProductPage() {
 
     const handleLogout = () => {
         localStorage.removeItem("email");
-        localStorage, removeItem("password");
-        window.location.href = "/login";
+        localStorage.removeItem("password");
+        window.location.href = "/";
     }
 
     const handleToCart = (id) => {
@@ -97,7 +97,7 @@ export default function ProductPage() {
                         <button className="bg-red-500 p-2 rounded-lg text-white mx-2" onClick={() => setModal(false)}>
                             CLOSE
                         </button>
-                        <button className="bg-green-500 py-2 px-4 rounded-lg text-white" onClick={() => window.location.href="/"}>
+                        <button className="bg-green-500 py-2 px-4 rounded-lg text-white" onClick={handleLogout}>
                             YES
                         </button>
                         </div>
