@@ -8,7 +8,7 @@ export default function Register(props) {
         <InputForm label="Username" type="Username" placeholder="Masukkan username"/>
         <InputForm label="Email" type="email" placeholder="Masukkan email"/>
         <InputForm label="Password" type="password" name="password" placeholder="Masukkan password"/>
-        <Button color="bg-blue-500">Register</Button>
+        <Button color="bg-red-500" text="text-white">Register</Button>
     </form>
   )
 }

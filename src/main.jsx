@@ -8,8 +8,7 @@ import "./index.css";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import ErrorPage from "./pages/error";
-import ProductPage from "./pages/product";
-import ProductDetail from "./pages/catalog";
+import Dashboard from "./pages/catalog";
 
 
 const router = createBrowserRouter([
@@ -24,12 +23,8 @@ const router = createBrowserRouter([
     element:<RegisterPage/>
   },
   {
-    path:"/login",
-    element:<ProductPage/>
-  },
-  {
-    path:"/catalog",
-    element:<ProductDetail/>
+    path:"/product",
+    element:<Dashboard/>
   },
 ]);
 
