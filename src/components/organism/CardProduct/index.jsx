@@ -7,7 +7,7 @@ export default function CardProduct(props) {
     return (
         <>
             <div className="rounded-lg bg-gradient-to-r from-violet-500 via-blue-500 to-sky-500 p-1">
-                <div className="w-80 h-[450px] bg-white rounded-lg">{children}</div>
+                <div className="w-96 h-[610px] bg-white rounded-lg">{children}</div>
             </div>
         </>
     )
@@ -17,7 +17,9 @@ const Header = (props) => {
     const { image } = props;
     return (
         <a href="#">
-            <img src={image} alt="gambar" className="p-4 rounded-t-lg" />
+            <div className="overflow-y-hidden text-clip h-80">
+            <img src={image} alt="gambar" className="px-28 py-10 rounded-t-lg" />
+            </div>
         </a>
     );
 };
@@ -28,8 +30,10 @@ const Body = (props) => {
         <>
             <div>
                 <a href="#">
-                    <h5 className="text-3xl px-4 font-bold text-slate-900">{title}</h5>
-                    <p className="mt-3 px-4 py-2 text-slate-700 text-base text-justify">{children}</p>
+                    <h5 className="overflow-y-auto truncate text-3xl px-4 font-bold text-slate-900">{title}</h5>
+                    <div className="overflow-y-hidden text-clip h-24">
+                    <p className="mt-2 px-4 py-2 text-slate-700 text-base text-justify">{children}</p>
+                    </div>
                 </a>
             </div>
         </>
@@ -40,8 +44,8 @@ const Footer = (props) => {
     const { price, handleToCart, id } = props;
     return (
         <>
-            <div className="px-6 py-4">
-                <div className="flex justify-between items-center py-2 px-2">
+            <div className="p-6 mt-2 mb-2">
+                <div className="flex justify-center items-center items-center py-2 px-2">
                     <span className="text-2xl font-bold text-slate-900" >
                         Harga : {price.toLocaleString("id-ID", {style: "currency", currency: "IDR"})}
                     </span>
