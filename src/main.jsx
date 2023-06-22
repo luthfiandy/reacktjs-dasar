@@ -11,13 +11,20 @@ import ErrorPage from "./pages/error";
 import ProductPage from "./pages/product";
 import ProductDetail from "./pages/catalog";
 import Counter from "./belajar/counter";
+import ProfilPage from "./pages/profil";
 
 
 const router = createBrowserRouter([
 
+  // {
+  //   path:"/",
+  //   element:<LoginPage/>,
+  //   // element: <Counter/>,
+  //   errorElement:<ErrorPage/>
+  // },
   {
     path:"/",
-    element:<LoginPage/>,
+    element:<ProfilPage/>,
     // element: <Counter/>,
     errorElement:<ErrorPage/>
   },

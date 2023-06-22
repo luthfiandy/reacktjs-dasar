@@ -3,23 +3,15 @@ import CardProduct from "../components/organism/CardProduct";
 import Button from "../components/atom/Button";
 import { getProduct } from "../services/product.service";
 import { getUsername } from "../services/auth.service";
+import { useLogin } from "../hooks/useLogin";
 
 export default function ProductPage() {
   // state = data/penyimpanan private yg dipake buat menghandle komponen yang berubah2
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [data, setData] = useState([]);
-  const [username, setUsername] = useState("");
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if(token) {
-      setUsername(getUsername(token));
-    }
-    else {
-      window.location.href = "/"
-    }
-  }, [])
+  const username = useLogin();
 
   //(componentDidMount) useEffect = sebuah hooks yg dipake buat memanipulasi komponen, fungsinya untuk membuat sinkronisasi antar komponen
   useEffect(() => {
