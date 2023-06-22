@@ -2,12 +2,24 @@ import React, { useEffect, useState } from "react";
 import CardProduct from "../components/organism/CardProduct";
 import Button from "../components/atom/Button";
 import { getProduct } from "../services/product.service";
+import { getUsername } from "../services/auth.service";
 
 export default function ProductPage() {
   // state = data/penyimpanan private yg dipake buat menghandle komponen yang berubah2
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [data, setData] = useState([]);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if(token) {
+      setUsername(getUsername(token));
+    }
+    else {
+      window.location.href = "/"
+    }
+  }, [])
 
   //(componentDidMount) useEffect = sebuah hooks yg dipake buat memanipulasi komponen, fungsinya untuk membuat sinkronisasi antar komponen
   useEffect(() => {
@@ -58,7 +70,7 @@ export default function ProductPage() {
   return (
     <>
       <div className="flex justify-between items-center bg-gray-800 text-white font-semibold px-4 py-4">
-        {/* <h4 className="text-xl">Hi, {email.split("@gmail.com")}</h4> */}
+        <h4 className="text-xl">Hi, {username}</h4>
         <Button color="bg-red-500" onClick={handleLogout}>
           Logout
         </Button>

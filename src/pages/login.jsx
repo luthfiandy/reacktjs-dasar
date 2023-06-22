@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export default function LoginPage() {
     return (
         <>
-            <div class="max-h-screen bg-[url('../../public/image/stick.jpg')] object-center bg-cover bg-center">
+            <div className="max-h-screen bg-[url('../../public/image/stick.jpg')] object-center bg-cover bg-center">
                 <AuthLayout title="Login" desc="Silahkan Masuk" type="login">
                     <Login />
                     <p className="text-sm mt-4 text-center">
