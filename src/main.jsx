@@ -12,7 +12,8 @@ import ProductPage from "./pages/product";
 import ProductDetail from "./pages/catalog";
 import Counter from "./belajar/counter";
 import ProfilPage from "./pages/profil";
-
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const router = createBrowserRouter([
 
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   // },
   {
     path:"/",
-    element:<ProfilPage/>,
+    element:<LoginPage/>,
     // element: <Counter/>,
     errorElement:<ErrorPage/>
   },
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
